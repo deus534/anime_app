@@ -1,5 +1,6 @@
 from animeflv import AnimeFLV
 import os
+
 def limpiar_terminal():
     if os.name == 'nt':  # Windows
         os.system('cls')
@@ -10,10 +11,11 @@ def buscar_anime():
         elements = api.search(input("escribe serie: "))
         while( elements==[] ):
             elements = api.search(input("escribe serie: "))
+        elem_sort = sorted(elements, key=lambda x: x.type)
         try:
             #for i, elemen in enumerate(elements):
             #    print(f"{i} - {elemen.title}")
-            for i, elemen in enumerate(elements):
+            for i, elemen in enumerate(elem_sort):
                 print(f"{i}: {elemen.type}=>{elemen.title}")
             selection = int(input("selecciona el anime: "))
             info = api.get_anime_info(elements[selection].id)
