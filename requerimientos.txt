@@ -1,4 +1,0 @@
-animeflv
-    cloudscraper
-    lxml
-    beautifulsoup4
