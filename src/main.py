@@ -21,7 +21,7 @@ def buscar_anime():
             info = api.get_anime_info(elements[selection].id)
             info.episodes.reverse()
             for j, episode in enumerate( info.episodes):
-                print(f"{j} | Episode - {episode.id}")
+                print(f"{j+1} | Episode - {episode.id}")
             index_episode = int(input("select episode: "))
             serie = elements[selection].id
             capitulo = info.episodes[index_episode].id
